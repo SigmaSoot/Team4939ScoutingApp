@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DisplayMessageActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="137dp"
+        android:layout_height="20dp"
+        android:text="@string/textView"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:text="@string/textView2"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="130dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textView3"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="237dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textView4"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="346dp" />
+
+    <RadioGroup
+        android:id="@+id/radioSandstormGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="50dp">
+
+        <RadioButton
+            android:id="@+id/sandButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sandButton1" />
+
+        <RadioButton
+            android:id="@+id/sandButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sandButton2" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/done"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="447dp" />
+
+    <SeekBar
+        android:id="@+id/seekBarHatch"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:max="20"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="197dp" />
+
+    <TextView
+        android:id="@+id/textHatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Slide to Set"
+        tools:layout_editor_absoluteX="156dp"
+        tools:layout_editor_absoluteY="163dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:text="Slide to Set"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="268dp" />
+
+    <SeekBar
+        android:id="@+id/seekBarCargo"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="302dp" />
+
+    <RadioGroup
+        android:id="@+id/radioCargoGroup"
+        android:layout_width="244dp"
+        android:layout_height="41dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="378dp">
+
+        <RadioButton
+            android:id="@+id/cargoButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cargoButton1" />
+
+        <RadioButton
+            android:id="@+id/cargoButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cargoButton2" />
+
+        <RadioButton
+            android:id="@+id/cargoButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cargoButton3" />
+
+    </RadioGroup>
+
+</android.support.constraint.ConstraintLayout>

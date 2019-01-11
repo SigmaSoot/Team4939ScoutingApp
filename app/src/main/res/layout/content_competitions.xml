@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Competitions"
+    tools:showIn="@layout/activity_competitions">
+
+    <ImageButton
+        android:id="@+id/humberCollege"
+        android:layout_width="165dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="203dp"
+        android:layout_marginRight="203dp"
+        android:layout_marginBottom="46dp"
+        android:background="@null"
+        android:onClick="humberSelection"
+        android:scaleType="fitCenter"
+        android:src="@drawable/humberlogo2"
+        app:layout_constraintBottom_toTopOf="@+id/ryersonUniversity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <ImageButton
+        android:id="@+id/ryersonUniversity"
+        android:layout_width="165dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="203dp"
+        android:layout_marginRight="203dp"
+        android:layout_marginBottom="21dp"
+        android:background="@null"
+        android:onClick="ryersonSelection"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ryersonlogo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/humberCollege" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="351dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginBottom="7dp"
+        android:text="@string/competitionTitle"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/common_google_signin_btn_text_light_pressed"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/humberCollege"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
