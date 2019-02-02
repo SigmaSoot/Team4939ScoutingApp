@@ -35,7 +35,36 @@
         <activity
             android:name=".TeamScoring"
             android:label="@string/title_activity_team_scoring"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RealTeamScoring"
+            android:label="@string/title_activity_real_team_scoring"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".RealTeamEndgame"/>
+        <activity
+            android:name=".RealTeamEndgame"
+            android:label="@string/title_activity_real_team_endgame"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".RealTeleOp"/>
+        <activity
+            android:name=".RealTeleOp"
+            android:label="@string/title_activity_real_tele_op"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".RealSandstorm"/>
+        <activity
+            android:name=".RealSandstorm"
+            android:label="@string/title_activity_real_sandstorm"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".RealBegginingLoc"/>
+        <activity
+            android:name=".RealBegginingLoc"
+            android:label="@string/title_activity_real_beggining_loc"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RealSubmit"
+            android:label="@string/title_activity_real_submit"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".RealTeamScoring"></activity>
     </application>
 
 </manifest>

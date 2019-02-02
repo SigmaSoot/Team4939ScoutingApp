@@ -106,5 +106,11 @@
     </string>
     <string name="title_activity_ryerson_team_selection">RyersonTeamSelection</string>
     <string name="title_activity_team_scoring">TeamScoring</string>
+    <string name="title_activity_real_team_scoring">Kill Me Please</string>
+    <string name="title_activity_real_team_endgame">RealTeamEndgame</string>
+    <string name="title_activity_real_tele_op">RealTeleOp</string>
+    <string name="title_activity_real_sandstorm">RealSandstorm</string>
+    <string name="title_activity_real_beggining_loc">RealBegginingLoc</string>
+    <string name="title_activity_real_submit">RealSubmit</string>
 
 </resources>

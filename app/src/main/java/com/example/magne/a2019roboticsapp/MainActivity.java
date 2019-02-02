@@ -21,7 +21,7 @@ public void startCompetitionActivity(View view){
 
 // mainly testing button to take user straight to scoring page
 public void startOtherActivity(View view){
-        Intent intent2 = new Intent(this, DisplayMessageActivity.class);
+        Intent intent2 = new Intent(this, RealBegginingLoc.class);
         startActivity(intent2);
 }
 }

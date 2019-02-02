@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".RealSubmit"
+    tools:showIn="@layout/activity_real_submit">
+
+    <Button
+        android:id="@+id/newTeamBtn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="153dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="93dp"
+        android:layout_marginBottom="75dp"
+        android:text="NEW TEAM"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/mainPageBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/mainPageBtn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="156dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="169dp"
+        android:text="MAIN PAGE"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newTeamBtn" />
+</android.support.constraint.ConstraintLayout>
