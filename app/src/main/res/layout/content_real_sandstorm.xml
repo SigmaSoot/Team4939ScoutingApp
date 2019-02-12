@@ -9,67 +9,67 @@
     tools:showIn="@layout/activity_real_sandstorm">
 
     <CheckBox
-        android:id="@+id/checkBox31"
+        android:id="@+id/sandstormCargoCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:text="Cargo"
-        app:layout_constraintBottom_toBottomOf="@+id/checkBox35"
+        app:layout_constraintBottom_toBottomOf="@+id/sandstormHatchCB"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/checkBox35" />
+        app:layout_constraintTop_toTopOf="@+id/sandstormHatchCB" />
 
     <CheckBox
-        android:id="@+id/checkBox32"
+        android:id="@+id/sandstormHatchRocketCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleX="0.9"
         android:scaleY="0.9"
         android:text="Rocketship"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox26"
-        app:layout_constraintStart_toStartOf="@+id/checkBox36" />
+        app:layout_constraintBottom_toTopOf="@+id/sandstormHatchOneCB"
+        app:layout_constraintStart_toStartOf="@+id/sandstormHatchCargoshipCB" />
 
     <CheckBox
-        android:id="@+id/checkBox33"
+        android:id="@+id/sandstormCargoCargoshipCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleX="0.9"
         android:scaleY="0.9"
         android:text="Cargoship"
-        app:layout_constraintEnd_toEndOf="@+id/checkBox31"
-        app:layout_constraintStart_toEndOf="@+id/checkBox31"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox31" />
+        app:layout_constraintEnd_toEndOf="@+id/sandstormCargoCB"
+        app:layout_constraintStart_toEndOf="@+id/sandstormCargoCB"
+        app:layout_constraintTop_toBottomOf="@+id/sandstormCargoCB" />
 
     <CheckBox
-        android:id="@+id/checkBox34"
+        android:id="@+id/sandstormCargoRocketCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleX="0.9"
         android:scaleY="0.9"
         android:text="Rocketship"
-        app:layout_constraintStart_toStartOf="@+id/checkBox33"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox33" />
+        app:layout_constraintStart_toStartOf="@+id/sandstormCargoCargoshipCB"
+        app:layout_constraintTop_toBottomOf="@+id/sandstormCargoCargoshipCB" />
 
     <CheckBox
-        android:id="@+id/checkBox35"
+        android:id="@+id/sandstormHatchCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:text="Hatch"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox36"
+        app:layout_constraintBottom_toTopOf="@+id/sandstormHatchCargoshipCB"
         app:layout_constraintStart_toEndOf="@+id/textView20" />
 
     <CheckBox
-        android:id="@+id/checkBox36"
+        android:id="@+id/sandstormHatchCargoshipCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleX="0.9"
         android:scaleY="0.9"
         android:text="Cargoship"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox32"
-        app:layout_constraintEnd_toEndOf="@+id/checkBox35"
-        app:layout_constraintStart_toEndOf="@+id/checkBox35" />
+        app:layout_constraintBottom_toTopOf="@+id/sandstormHatchRocketCB"
+        app:layout_constraintEnd_toEndOf="@+id/sandstormHatchCB"
+        app:layout_constraintStart_toEndOf="@+id/sandstormHatchCB" />
 
     <TextView
         android:id="@+id/textView19"
@@ -83,7 +83,7 @@
         android:layout_marginBottom="2dp"
         android:text="Did they leave the platform?"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox23"
+        app:layout_constraintBottom_toTopOf="@+id/sandstormYesCB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,7 +91,7 @@
         app:layout_constraintVertical_chainStyle="spread" />
 
     <CheckBox
-        android:id="@+id/checkBox23"
+        android:id="@+id/sandstormYesCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="47dp"
@@ -102,12 +102,12 @@
         android:layout_marginBottom="53dp"
         android:text="Yes"
         app:layout_constraintBottom_toTopOf="@+id/textView20"
-        app:layout_constraintEnd_toStartOf="@+id/checkBox24"
+        app:layout_constraintEnd_toStartOf="@+id/sandstormNoCB"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <CheckBox
-        android:id="@+id/checkBox24"
+        android:id="@+id/sandstormNoCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="53dp"
@@ -119,7 +119,7 @@
         android:text="No"
         app:layout_constraintBottom_toTopOf="@+id/textView20"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/checkBox23"
+        app:layout_constraintStart_toEndOf="@+id/sandstormYesCB"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <TextView
@@ -134,13 +134,13 @@
         android:layout_marginBottom="13dp"
         android:text="Starting Object"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox31"
+        app:layout_constraintBottom_toTopOf="@+id/sandstormCargoCB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox23" />
+        app:layout_constraintTop_toBottomOf="@+id/sandstormYesCB" />
 
     <CheckBox
-        android:id="@+id/checkBox25"
+        android:id="@+id/sandstormCargoOneCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="51dp"
@@ -150,12 +150,12 @@
         android:scaleX="0.8"
         android:scaleY="0.8"
         android:text="Level 1"
-        app:layout_constraintEnd_toStartOf="@+id/checkBox32"
-        app:layout_constraintStart_toStartOf="@+id/checkBox23"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox34" />
+        app:layout_constraintEnd_toStartOf="@+id/sandstormHatchRocketCB"
+        app:layout_constraintStart_toStartOf="@+id/sandstormYesCB"
+        app:layout_constraintTop_toBottomOf="@+id/sandstormCargoRocketCB" />
 
     <CheckBox
-        android:id="@+id/checkBox26"
+        android:id="@+id/sandstormHatchOneCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -168,59 +168,59 @@
         android:text="Level 1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/checkBox32" />
+        app:layout_constraintStart_toStartOf="@+id/sandstormHatchRocketCB" />
 
     <CheckBox
-        android:id="@+id/checkBox27"
+        android:id="@+id/sandstormCargoTwoCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleX="0.8"
         android:scaleY="0.8"
         android:text="Level 2"
-        app:layout_constraintStart_toStartOf="@+id/checkBox25"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox25" />
+        app:layout_constraintStart_toStartOf="@+id/sandstormCargoOneCB"
+        app:layout_constraintTop_toBottomOf="@+id/sandstormCargoOneCB" />
 
     <CheckBox
-        android:id="@+id/checkBox28"
+        android:id="@+id/sandstormHatchTwoCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleX="0.8"
         android:scaleY="0.8"
         android:text="Level 2"
-        app:layout_constraintStart_toStartOf="@+id/checkBox26"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox26" />
+        app:layout_constraintStart_toStartOf="@+id/sandstormHatchOneCB"
+        app:layout_constraintTop_toBottomOf="@+id/sandstormHatchOneCB" />
 
     <CheckBox
-        android:id="@+id/checkBox29"
+        android:id="@+id/sandstormCargoThreeCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleX="0.8"
         android:scaleY="0.8"
         android:text="Level 3"
-        app:layout_constraintStart_toStartOf="@+id/checkBox27"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox27" />
+        app:layout_constraintStart_toStartOf="@+id/sandstormCargoTwoCB"
+        app:layout_constraintTop_toBottomOf="@+id/sandstormCargoTwoCB" />
 
     <CheckBox
-        android:id="@+id/checkBox30"
+        android:id="@+id/sandstormHatchThreeCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleX="0.8"
         android:scaleY="0.8"
         android:text="Level 3"
-        app:layout_constraintStart_toStartOf="@+id/checkBox28"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox28" />
+        app:layout_constraintStart_toStartOf="@+id/sandstormHatchTwoCB"
+        app:layout_constraintTop_toBottomOf="@+id/sandstormHatchTwoCB" />
 
     <CheckBox
-        android:id="@+id/checkBox37"
+        android:id="@+id/sandstormSuccessfulCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="63dp"
         android:layout_marginBottom="61dp"
         android:text="Successful"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/checkBox34"
-        app:layout_constraintStart_toStartOf="@+id/checkBox34"
-        app:layout_constraintTop_toTopOf="@+id/checkBox29" />
+        app:layout_constraintEnd_toEndOf="@+id/sandstormCargoRocketCB"
+        app:layout_constraintStart_toStartOf="@+id/sandstormCargoRocketCB"
+        app:layout_constraintTop_toTopOf="@+id/sandstormCargoThreeCB" />
 
     <Button
         android:id="@+id/button7"

@@ -9,7 +9,7 @@
     tools:showIn="@layout/activity_real_beggining_loc">
 
     <CheckBox
-        android:id="@+id/checkBox38"
+        android:id="@+id/oneBeginningLoc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="91dp"
@@ -21,13 +21,13 @@
         android:scaleX="2"
         android:scaleY="2"
         android:text="Platform 1"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox39"
+        app:layout_constraintBottom_toTopOf="@+id/twoBeginningLoc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox39"
+        android:id="@+id/twoBeginningLoc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="91dp"
@@ -42,7 +42,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox38" />
+        app:layout_constraintTop_toBottomOf="@+id/oneBeginningLoc" />
 
     <Button
         android:id="@+id/button6"

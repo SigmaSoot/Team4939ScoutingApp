@@ -11,20 +11,20 @@ import android.os.SystemClock;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
+//NEEDS DEBUGGING - NULLPOINTEREXCEPTION
+
 public class RealTeleOp extends AppCompatActivity {
 
     private boolean isStart;
     private Chronometer chronometer;
-    private int cycleNum = 1;
 
-    private CheckBox teleopList[] = {
-            (findViewById(R.id.hatchTeleCB)), (findViewById(R.id.yesCargoTeleCB)), (findViewById(R.id.noCargoTeleCB)),
-            (findViewById(R.id.rocketHatchTeleCB)), (findViewById(R.id.oneRocketHatchCB)), (findViewById(R.id.twoRocketHatchCB)),
-            (findViewById(R.id.threeRocketHatchCB)), (findViewById(R.id.cargoHatchCB)), (findViewById(R.id.yesHatchCB)),
-            (findViewById(R.id.noHatchCB)), (findViewById(R.id.cargoTeleCB)), (findViewById(R.id.rocketCargoTeleCB)),
-            (findViewById(R.id.oneRocketCargoTeleCB)), (findViewById(R.id.twoRocketCargoCB)), (findViewById(R.id.threeRocketCargoCB)),
-            (findViewById(R.id.cargoCargoTeleCB))
-    };
+    private int cycleNum = 1;
+    public CheckBox teleopList[] = new CheckBox[16];
+    public HashMap<String,Boolean[]> cycleList = new HashMap<>();
+
+
 
 
 
@@ -48,7 +48,17 @@ public class RealTeleOp extends AppCompatActivity {
     }
 
     public void startEndgameActivity(View view){
+        cycleList.put(String.format("cycle%d", cycleNum), new Boolean[]{
+                teleopList[0].isChecked(),teleopList[1].isChecked(),teleopList[2].isChecked(),
+                teleopList[3].isChecked(),teleopList[4].isChecked(),teleopList[5].isChecked(),
+                teleopList[6].isChecked(),teleopList[7].isChecked(),teleopList[8].isChecked(),
+                teleopList[9].isChecked(),teleopList[10].isChecked(),teleopList[11].isChecked(),
+                teleopList[12].isChecked(),teleopList[13].isChecked(),teleopList[14].isChecked(),
+                teleopList[15].isChecked()
+        });
+
         Intent intent = new Intent(this, RealTeamEndgame.class);
+        intent.putExtra("teleopList",teleopList);
         startActivity(intent);
     }
 
@@ -72,10 +82,36 @@ public class RealTeleOp extends AppCompatActivity {
         ((TextView) findViewById(R.id.cycleTitle)).setText(titleChange);
         //ADD STORAGE OF THE PREVIOUS CYCLE'S INFO FUNCTIONALITY
         //RESET SCREEN FUNCTIONALITY
-        for (CheckBox CB: teleopList){
-            CB.setChecked(false);
-        }
+        teleopList = new CheckBox[]{
+            teleopList[3] = (CheckBox) findViewById(R.id.cargoCargoTeleCB),
+            teleopList[1] = (CheckBox) findViewById(R.id.yesCargoTeleCB),
+            teleopList[2] = (CheckBox) findViewById(R.id.noCargoTeleCB),
+            teleopList[0] = (CheckBox) findViewById(R.id.hatchTeleCB),
+            teleopList[4] = (CheckBox) findViewById(R.id.rocketHatchTeleCB),
+            teleopList[5] = (CheckBox) findViewById(R.id.oneRocketHatchCB),
+            teleopList[6] = (CheckBox) findViewById(R.id.twoRocketHatchCB),
+            teleopList[7] = (CheckBox) findViewById(R.id.threeRocketHatchCB),
+            teleopList[8] = (CheckBox) findViewById(R.id.cargoHatchCB),
+            teleopList[9] = (CheckBox) findViewById(R.id.yesHatchCB),
+            teleopList[10] = (CheckBox) findViewById(R.id.noHatchCB),
+            teleopList[11] = (CheckBox) findViewById(R.id.cargoTeleCB),
+            teleopList[12] = (CheckBox) findViewById(R.id.oneRocketCargoTeleCB),
+            teleopList[13] = (CheckBox) findViewById(R.id.twoRocketCargoCB),
+            teleopList[14] = (CheckBox) findViewById(R.id.threeRocketCargoCB),
+            teleopList[15] = (CheckBox) findViewById(R.id.rocketCargoTeleCB)
+        };
 
+        //Storing cycle values in HashMap
+        cycleList.put(String.format("cycle%d", cycleNum), new Boolean[]{
+                teleopList[0].isChecked(),teleopList[1].isChecked(),teleopList[2].isChecked(),
+                teleopList[3].isChecked(),teleopList[4].isChecked(),teleopList[5].isChecked(),
+                teleopList[6].isChecked(),teleopList[7].isChecked(),teleopList[8].isChecked(),
+                teleopList[9].isChecked(),teleopList[10].isChecked(),teleopList[11].isChecked(),
+                teleopList[12].isChecked(),teleopList[13].isChecked(),teleopList[14].isChecked(),
+                teleopList[15].isChecked()
+        });
+
+       for (CheckBox CB: teleopList) CB.setChecked(false);
 
     }
 

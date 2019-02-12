@@ -32,18 +32,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/endgameStopYesCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="7dp"
         android:text="Yes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/endgameStopNoCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
@@ -53,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/endgameTime"
         android:layout_width="65dp"
         android:layout_height="30dp"
         android:layout_marginTop="58dp"
@@ -61,9 +60,9 @@
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/textView14"
-        app:layout_constraintEnd_toStartOf="@+id/checkBox2"
-        app:layout_constraintStart_toStartOf="@+id/checkBox2"
-        app:layout_constraintTop_toTopOf="@+id/checkBox2" />
+        app:layout_constraintEnd_toStartOf="@+id/endgameStopNoCB"
+        app:layout_constraintStart_toStartOf="@+id/endgameStopNoCB"
+        app:layout_constraintTop_toTopOf="@+id/endgameStopNoCB" />
 
     <TextView
         android:id="@+id/textView13"
@@ -72,7 +71,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:text="Time (s)"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editText"
+        app:layout_constraintBaseline_toBaselineOf="@+id/endgameTime"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -89,7 +88,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/endgameTipYesCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -100,11 +99,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/endgameTipNoCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
-        android:text="Now"
+        android:text="No"
         app:layout_constraintEnd_toEndOf="@+id/textView15"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -114,12 +113,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="27dp"
         android:text="Did the recover from the fall?"
-        app:layout_constraintEnd_toEndOf="@+id/checkBox5"
-        app:layout_constraintStart_toEndOf="@+id/checkBox5"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+        app:layout_constraintEnd_toEndOf="@+id/endgameRecoverYesCB"
+        app:layout_constraintStart_toEndOf="@+id/endgameRecoverYesCB"
+        app:layout_constraintTop_toBottomOf="@+id/endgame" />
 
     <CheckBox
-        android:id="@+id/checkBox5"
+        android:id="@+id/endgameRecoverYesCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="74dp"
@@ -130,7 +129,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <CheckBox
-        android:id="@+id/checkBox6"
+        android:id="@+id/endgameRecoverNoCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
