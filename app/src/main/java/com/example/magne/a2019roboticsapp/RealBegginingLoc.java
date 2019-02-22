@@ -15,8 +15,7 @@ import java.util.List;
 
 public class RealBegginingLoc extends AppCompatActivity {
 
-    public Boolean beginningList[];
-
+    public boolean beginningList[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +26,18 @@ public class RealBegginingLoc extends AppCompatActivity {
     }
 
     public void startSandstormActivity(View view){
-        beginningList = new Boolean[2];
+        beginningList = new boolean[2];
         CheckBox o;
         o = findViewById(R.id.oneBeginningLoc);
         beginningList[0] = o.isChecked();
         o = findViewById(R.id.twoBeginningLoc);
         beginningList[1] = o.isChecked();
 
+        String[] newTeamInfo = getIntent().getStringArrayExtra("newTeamInfo");
+
         Intent intent = new Intent(this, RealSandstorm.class);
         intent.putExtra("beginningList", beginningList);
+        intent.putExtra("newTeamInfo", newTeamInfo);
         startActivity(intent);
     }
 

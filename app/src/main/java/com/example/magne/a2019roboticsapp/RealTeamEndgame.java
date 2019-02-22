@@ -14,7 +14,7 @@ public class RealTeamEndgame extends AppCompatActivity {
 
     public CheckBox endgameListCB[] = new CheckBox[6];
     public String time;
-    public Boolean endgameList[] = new Boolean[6];
+    public boolean endgameList[] = new boolean[6];
 
 
     @Override
@@ -43,7 +43,16 @@ public class RealTeamEndgame extends AppCompatActivity {
             i++;
         }
 
+        String[] newTeamInfo = getIntent().getStringArrayExtra("newTeamInfo");
+        boolean[] beginningList = getIntent().getBooleanArrayExtra("beginningList");
+        boolean[] sandstormList = getIntent().getBooleanArrayExtra("sandstormList");
+        boolean[] teleopList = getIntent().getBooleanArrayExtra("teleopList");
+
         Intent intent = new Intent(this, RealTeamScoring.class);
+        intent.putExtra("newTeamInfo",newTeamInfo);
+        intent.putExtra("beginningList",beginningList);
+        intent.putExtra("sandstormList",sandstormList);
+        intent.putExtra("teleopList",teleopList);
         intent.putExtra("endgameList", endgameList);
         intent.putExtra("endgameTime", time);
         startActivity(intent);

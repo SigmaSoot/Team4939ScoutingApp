@@ -9,7 +9,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.CheckBox;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static java.util.Arrays.asList;
+
 public class RealTeamScoring extends AppCompatActivity {
+
+    private DatabaseReference mDatabase;
+
 
     public CheckBox teamscoringListCB[] = new CheckBox[14];
     public Boolean teamscoringList[] = new Boolean[14];
@@ -17,23 +29,27 @@ public class RealTeamScoring extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_real_team_scoring);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         //dis de info bois :)
-        boolean[] beginningList = getIntent().getBooleanArrayExtra("beginningList");
-        boolean[] sandstormList = getIntent().getBooleanArrayExtra("sandstormList");
-        boolean[] endgameList = getIntent().getBooleanArrayExtra("endgameList");
-        boolean[] teleopList = getIntent().getBooleanArrayExtra("teleopList");
-        String time = getIntent().getStringExtra("endgameTime");
+
 
     }
-
+    private List<Boolean> boolConverter (boolean[] primList, List<Boolean> objList){
+        for (boolean bool : primList){
+           Boolean i = Boolean.valueOf(bool);
+           objList.add(i);
+        }
+        return objList;
+    }
         public void startSubmitActivity (View view){
-            Intent intent = new Intent(this, RealSubmit.class);
-            startActivity(intent);
+
+            mDatabase = FirebaseDatabase.getInstance().getReference();
 
             teamscoringListCB = new CheckBox[]{
                     teamscoringListCB[0] = (CheckBox) findViewById(R.id.cargoRocketCB),
@@ -50,6 +66,7 @@ public class RealTeamScoring extends AppCompatActivity {
                     teamscoringListCB[11] = (CheckBox) findViewById(R.id.speedSlowCB),
                     teamscoringListCB[12] = (CheckBox) findViewById(R.id.drivingCoordinateCB),
                     teamscoringListCB[13] = (CheckBox) findViewById(R.id.drivingPushyCB)
+
             };
 
             int i = 0;
@@ -57,9 +74,33 @@ public class RealTeamScoring extends AppCompatActivity {
                 teamscoringList[i] = CB.isChecked();
                 i++;
             }
+            boolean[] beginningList = getIntent().getBooleanArrayExtra("beginningList");
+            List<Boolean> BL = new ArrayList<>();
+            BL = boolConverter(beginningList,BL);
+            boolean[] sandstormList = getIntent().getBooleanArrayExtra("sandstormList");
+            List<Boolean> SL = new ArrayList<>();
+            SL = boolConverter(sandstormList,SL);
+            boolean[] endgameList = getIntent().getBooleanArrayExtra("endgameList");
+            List<Boolean> EL = new ArrayList<>();
+            EL = boolConverter(endgameList,EL);
+            boolean[] teleopList = getIntent().getBooleanArrayExtra("teleopList");
+            List<Boolean> TL = new ArrayList<>();
+            //TL = boolConverter(teleopList,TL);
+            String[] newTeamInfo = getIntent().getStringArrayExtra("newTeamInfo");
+            String time = getIntent().getStringExtra("endgameTime");
 
-            //WRITE INFO TO FIREBASE
+            mDatabase.child("Teams").child(newTeamInfo[1]).setValue(newTeamInfo[0]);
+            mDatabase.child("Teams").child(newTeamInfo[1]).child("Scouter Name").setValue(newTeamInfo[2]);
+            mDatabase.child("Teams").child(newTeamInfo[1]).child("Beginning Info").setValue(BL);
+            mDatabase.child("Teams").child(newTeamInfo[1]).child("Sandstorm Info").setValue(SL);
+            //mDatabase.child("Teams").child(newTeamInfo[1]).child("Tele-Op Info").setValue(TL);
+            mDatabase.child("Teams").child(newTeamInfo[1]).child("Endgame Info").setValue(EL);
 
+            //mDatabase.child("Teams").child("4939").setValue(beginningList);
+
+
+            Intent intent = new Intent(this, RealSubmit.class);
+            startActivity(intent);
         }
 
     }

@@ -12,7 +12,7 @@ import android.widget.CheckBox;
 public class RealSandstorm extends AppCompatActivity {
 
     public CheckBox sandstormListCB[] = new CheckBox[15];
-    public Boolean sandstormList[] = new Boolean[15];
+    public boolean sandstormList[] = new boolean[15];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +26,14 @@ public class RealSandstorm extends AppCompatActivity {
 
     }
     public void startTeleopActivity(View view){
+
+        String[] newTeamInfo = getIntent().getStringArrayExtra("newTeamInfo");
+        boolean[] beginningList = getIntent().getBooleanArrayExtra("beginningList");
+
         Intent intent = new Intent(this, RealTeleOp.class);
         intent.putExtra("sandstormList", sandstormList);
+        intent.putExtra("beginningList", beginningList);
+        intent.putExtra("newTeamInfo", newTeamInfo);
         startActivity(intent);
 
 

@@ -48,6 +48,24 @@ public class RealTeleOp extends AppCompatActivity {
     }
 
     public void startEndgameActivity(View view){
+        teleopList = new CheckBox[]{
+                teleopList[3] = (CheckBox) findViewById(R.id.cargoCargoTeleCB),
+                teleopList[1] = (CheckBox) findViewById(R.id.yesCargoTeleCB),
+                teleopList[2] = (CheckBox) findViewById(R.id.noCargoTeleCB),
+                teleopList[0] = (CheckBox) findViewById(R.id.hatchTeleCB),
+                teleopList[4] = (CheckBox) findViewById(R.id.rocketHatchTeleCB),
+                teleopList[5] = (CheckBox) findViewById(R.id.oneRocketHatchCB),
+                teleopList[6] = (CheckBox) findViewById(R.id.twoRocketHatchCB),
+                teleopList[7] = (CheckBox) findViewById(R.id.threeRocketHatchCB),
+                teleopList[8] = (CheckBox) findViewById(R.id.cargoHatchCB),
+                teleopList[9] = (CheckBox) findViewById(R.id.yesHatchCB),
+                teleopList[10] = (CheckBox) findViewById(R.id.noHatchCB),
+                teleopList[11] = (CheckBox) findViewById(R.id.cargoTeleCB),
+                teleopList[12] = (CheckBox) findViewById(R.id.oneRocketCargoTeleCB),
+                teleopList[13] = (CheckBox) findViewById(R.id.twoRocketCargoCB),
+                teleopList[14] = (CheckBox) findViewById(R.id.threeRocketCargoCB),
+                teleopList[15] = (CheckBox) findViewById(R.id.rocketCargoTeleCB)
+        };
         cycleList.put(String.format("cycle%d", cycleNum), new Boolean[]{
                 teleopList[0].isChecked(),teleopList[1].isChecked(),teleopList[2].isChecked(),
                 teleopList[3].isChecked(),teleopList[4].isChecked(),teleopList[5].isChecked(),
@@ -57,8 +75,15 @@ public class RealTeleOp extends AppCompatActivity {
                 teleopList[15].isChecked()
         });
 
+        boolean[] beginningList = getIntent().getBooleanArrayExtra("beginningList");
+        String[] newTeamInfo = getIntent().getStringArrayExtra("newTeamInfo");
+        boolean[] sandstormList = getIntent().getBooleanArrayExtra("sandstormList");
+
         Intent intent = new Intent(this, RealTeamEndgame.class);
-        intent.putExtra("teleopList",teleopList);
+        intent.putExtra("newTeamInfo", newTeamInfo);
+        intent.putExtra("beginningList", beginningList);
+        intent.putExtra("sandstormList", sandstormList);
+        intent.putExtra("teleopList",cycleList);
         startActivity(intent);
     }
 

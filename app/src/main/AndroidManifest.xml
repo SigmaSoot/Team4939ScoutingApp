@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".RealNewTeam"
+            android:label="@string/title_activity_real_new_team"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,23 +44,23 @@
         <activity
             android:name=".RealTeamScoring"
             android:label="@string/title_activity_real_team_scoring"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".RealTeamEndgame"/>
+            android:parentActivityName=".RealTeamEndgame"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RealTeamEndgame"
             android:label="@string/title_activity_real_team_endgame"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".RealTeleOp"/>
+            android:parentActivityName=".RealTeleOp"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RealTeleOp"
             android:label="@string/title_activity_real_tele_op"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".RealSandstorm"/>
+            android:parentActivityName=".RealSandstorm"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RealSandstorm"
             android:label="@string/title_activity_real_sandstorm"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".RealBegginingLoc"/>
+            android:parentActivityName=".RealBegginingLoc"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RealBegginingLoc"
             android:label="@string/title_activity_real_beggining_loc"
@@ -63,8 +68,8 @@
         <activity
             android:name=".RealSubmit"
             android:label="@string/title_activity_real_submit"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".RealTeamScoring"></activity>
+            android:parentActivityName=".RealTeamScoring"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

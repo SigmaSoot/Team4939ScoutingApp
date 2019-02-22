@@ -9,6 +9,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
@@ -21,7 +22,7 @@ public void startCompetitionActivity(View view){
 
 // mainly testing button to take user straight to scoring page
 public void startOtherActivity(View view){
-        Intent intent2 = new Intent(this, RealBegginingLoc.class);
+        Intent intent2 = new Intent(this, RealNewTeam.class);
         startActivity(intent2);
 }
 }

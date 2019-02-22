@@ -112,5 +112,6 @@
     <string name="title_activity_real_sandstorm">RealSandstorm</string>
     <string name="title_activity_real_beggining_loc">RealBegginingLoc</string>
     <string name="title_activity_real_submit">RealSubmit</string>
+    <string name="title_activity_real_new_team">RealNewTeam</string>
 
 </resources>
