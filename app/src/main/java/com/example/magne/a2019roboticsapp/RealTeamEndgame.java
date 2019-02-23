@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class RealTeamEndgame extends AppCompatActivity {
 
     public CheckBox endgameListCB[] = new CheckBox[6];
@@ -46,7 +49,8 @@ public class RealTeamEndgame extends AppCompatActivity {
         String[] newTeamInfo = getIntent().getStringArrayExtra("newTeamInfo");
         boolean[] beginningList = getIntent().getBooleanArrayExtra("beginningList");
         boolean[] sandstormList = getIntent().getBooleanArrayExtra("sandstormList");
-        boolean[] teleopList = getIntent().getBooleanArrayExtra("teleopList");
+        ArrayList<Integer> teleopTimes = getIntent().getIntegerArrayListExtra("teleopTimes");
+        HashMap<String, Boolean[]> teleopList = (HashMap<String, Boolean[]>)getIntent().getSerializableExtra("teleopList");
 
         Intent intent = new Intent(this, RealTeamScoring.class);
         intent.putExtra("newTeamInfo",newTeamInfo);
@@ -55,6 +59,7 @@ public class RealTeamEndgame extends AppCompatActivity {
         intent.putExtra("teleopList",teleopList);
         intent.putExtra("endgameList", endgameList);
         intent.putExtra("endgameTime", time);
+        intent.putIntegerArrayListExtra("teleopTimes", teleopTimes);
         startActivity(intent);
     }
 }

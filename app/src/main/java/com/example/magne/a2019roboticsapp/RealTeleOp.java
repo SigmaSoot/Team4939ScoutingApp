@@ -11,9 +11,9 @@ import android.os.SystemClock;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-
-//NEEDS DEBUGGING - NULLPOINTEREXCEPTION
+import java.util.List;
 
 public class RealTeleOp extends AppCompatActivity {
 
@@ -23,6 +23,8 @@ public class RealTeleOp extends AppCompatActivity {
     private int cycleNum = 1;
     public CheckBox teleopList[] = new CheckBox[16];
     public HashMap<String,Boolean[]> cycleList = new HashMap<>();
+    public ArrayList<Integer> cycleTimes = new ArrayList<>();
+
 
 
 
@@ -74,7 +76,8 @@ public class RealTeleOp extends AppCompatActivity {
                 teleopList[12].isChecked(),teleopList[13].isChecked(),teleopList[14].isChecked(),
                 teleopList[15].isChecked()
         });
-
+        int time = (int) (SystemClock.elapsedRealtime() - chronometer.getBase());
+        cycleTimes.add(time);
         boolean[] beginningList = getIntent().getBooleanArrayExtra("beginningList");
         String[] newTeamInfo = getIntent().getStringArrayExtra("newTeamInfo");
         boolean[] sandstormList = getIntent().getBooleanArrayExtra("sandstormList");
@@ -84,6 +87,7 @@ public class RealTeleOp extends AppCompatActivity {
         intent.putExtra("beginningList", beginningList);
         intent.putExtra("sandstormList", sandstormList);
         intent.putExtra("teleopList",cycleList);
+        intent.putIntegerArrayListExtra("teleopTimes", cycleTimes);
         startActivity(intent);
     }
 
@@ -101,6 +105,8 @@ public class RealTeleOp extends AppCompatActivity {
     }
 
     public void nextCycle(View view){
+        int time = (int) (SystemClock.elapsedRealtime() - chronometer.getBase());
+        cycleTimes.add(time);
         chronometer.setBase(SystemClock.elapsedRealtime());
         cycleNum++;
         String titleChange = String.format("Cycle %d", cycleNum);

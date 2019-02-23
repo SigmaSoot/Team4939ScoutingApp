@@ -14,6 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import static java.util.Arrays.asList;
@@ -83,9 +84,10 @@ public class RealTeamScoring extends AppCompatActivity {
             boolean[] endgameList = getIntent().getBooleanArrayExtra("endgameList");
             List<Boolean> EL = new ArrayList<>();
             EL = boolConverter(endgameList,EL);
-            boolean[] teleopList = getIntent().getBooleanArrayExtra("teleopList");
-            List<Boolean> TL = new ArrayList<>();
-            //TL = boolConverter(teleopList,TL);
+            HashMap<String, Boolean[]> teleopList = (HashMap<String, Boolean[]>)getIntent().getSerializableExtra("teleopList");
+
+            ArrayList<Integer> teleopTimes = getIntent().getIntegerArrayListExtra("teleopTimes");
+
             String[] newTeamInfo = getIntent().getStringArrayExtra("newTeamInfo");
             String time = getIntent().getStringExtra("endgameTime");
 
@@ -93,10 +95,16 @@ public class RealTeamScoring extends AppCompatActivity {
             mDatabase.child("Teams").child(newTeamInfo[1]).child("Scouter Name").setValue(newTeamInfo[2]);
             mDatabase.child("Teams").child(newTeamInfo[1]).child("Beginning Info").setValue(BL);
             mDatabase.child("Teams").child(newTeamInfo[1]).child("Sandstorm Info").setValue(SL);
-            //mDatabase.child("Teams").child(newTeamInfo[1]).child("Tele-Op Info").setValue(TL);
+            int u = 0;
+            for (HashMap.Entry<String,Boolean[]> whichCycle : teleopList.entrySet()){
+                List<Boolean> prop =  Arrays.asList(whichCycle.getValue());
+                mDatabase.child("Teams").child(newTeamInfo[1]).child("Tele-Op Info").child(whichCycle.getKey()).setValue(prop);
+                mDatabase.child("Teams").child(newTeamInfo[1]).child("Tele-Op Info").child(whichCycle.getKey()).setValue(teleopTimes.get(u));
+                u++;
+            }
             mDatabase.child("Teams").child(newTeamInfo[1]).child("Endgame Info").setValue(EL);
+            mDatabase.child("Teams").child(newTeamInfo[1]).child("Endgame Info").setValue(time);
 
-            //mDatabase.child("Teams").child("4939").setValue(beginningList);
 
 
             Intent intent = new Intent(this, RealSubmit.class);
