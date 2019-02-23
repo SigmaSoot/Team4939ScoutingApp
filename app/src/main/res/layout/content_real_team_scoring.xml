@@ -12,65 +12,67 @@
         android:id="@+id/cargoRocketCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="15dp"
         android:text="Cargo in the rocketship?"
-        app:layout_constraintStart_toStartOf="@+id/cargoShipCB"
-        app:layout_constraintTop_toBottomOf="@+id/cargoShipCB" />
+        app:layout_constraintBottom_toTopOf="@+id/hatchShipCB"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/hatchShipCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="14dp"
         android:text="Hatch on cargo ship?"
-        app:layout_constraintStart_toStartOf="@+id/cargoRocketCB"
-        app:layout_constraintTop_toBottomOf="@+id/cargoRocketCB" />
+        app:layout_constraintBottom_toTopOf="@+id/hatchRocketCB"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/cargoShipCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
         android:text="Cargo in the cargo ship?"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
     <CheckBox
         android:id="@+id/hatchRocketCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="176dp"
         android:text="Hatch in rocketship?"
-        app:layout_constraintStart_toStartOf="@+id/hatchShipCB"
-        app:layout_constraintTop_toBottomOf="@+id/hatchShipCB" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/climbYesCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="14dp"
         android:text="Yes"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <CheckBox
         android:id="@+id/climbNoCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginLeft="21dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginTop="14dp"
         android:text="No"
-        app:layout_constraintBottom_toTopOf="@+id/platformOneCB"
-        app:layout_constraintStart_toEndOf="@+id/platformOneCB" />
+        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
         android:text="Can they climb?"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,6 +82,7 @@
         android:id="@+id/platformTwoCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Platform 2"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/platformOneCB"
@@ -89,6 +92,7 @@
         android:id="@+id/platformThreeCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
         android:text="Platform 3"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/platformTwoCB"
@@ -98,109 +102,109 @@
         android:id="@+id/platformOneCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="16dp"
         android:text="Platform 1"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/climbYesCB"
-        app:layout_constraintTop_toBottomOf="@+id/climbYesCB" />
+        app:layout_constraintStart_toEndOf="@+id/climbNoCB"
+        app:layout_constraintTop_toBottomOf="@+id/climbNoCB" />
 
     <CheckBox
         android:id="@+id/speedSlowCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="11dp"
         android:text="Slow"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView10"
-        app:layout_constraintStart_toStartOf="@+id/textView10" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <CheckBox
         android:id="@+id/speedFastCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="17dp"
-        android:layout_marginRight="17dp"
+        android:layout_marginStart="2dp"
         android:text="Fast"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/drivingPushyCB"
-        app:layout_constraintTop_toTopOf="@+id/speedMediumCB" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/speedMediumCB"
+        app:layout_constraintStart_toEndOf="@+id/platformThreeCB" />
 
     <CheckBox
         android:id="@+id/drivingCoordinateCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginEnd="109dp"
-        android:layout_marginRight="109dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="9dp"
         android:text="Coordinate"
         android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/drivingPushyCB"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <CheckBox
         android:id="@+id/drivingPushyCB"
-        android:layout_width="0dp"
+        android:layout_width="147dp"
         android:layout_height="29dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
-        android:layout_marginBottom="51dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="64dp"
         android:text="Pushy"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/submitBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/drivingCoordinateCB"
-        app:layout_constraintTop_toTopOf="@+id/speedFastCB" />
+        app:layout_constraintTop_toBottomOf="@+id/speedFastCB" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="159dp"
+        android:layout_marginBottom="160dp"
         android:text="Speed"
-        app:layout_constraintBottom_toTopOf="@+id/speedSlowCB"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/submitBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/climbYesCB" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="83dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginBottom="64dp"
         android:text="Driving Style"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView9"
-        app:layout_constraintStart_toEndOf="@+id/textView9" />
+        app:layout_constraintBottom_toTopOf="@+id/submitBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/speedSlowCB" />
 
     <Button
         android:id="@+id/submitBtn"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
+        android:layout_height="37dp"
         android:layout_marginBottom="3dp"
         android:onClick="startSubmitActivity"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/speedFastCB"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/drivingCoordinateCB" />
+        app:layout_constraintStart_toStartOf="@+id/climbNoCB" />
 
     <CheckBox
         android:id="@+id/speedMediumCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="34dp"
         android:text="Medium"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView10"
-        app:layout_constraintStart_toEndOf="@+id/drivingCoordinateCB" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/speedSlowCB"
+        app:layout_constraintStart_toEndOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/cargoShipCB"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

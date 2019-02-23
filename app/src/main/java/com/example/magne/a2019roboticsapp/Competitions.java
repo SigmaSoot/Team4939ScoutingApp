@@ -17,8 +17,6 @@ public class Competitions extends AppCompatActivity {
         setContentView(R.layout.activity_competitions);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        initializeVars();
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -32,19 +30,15 @@ public class Competitions extends AppCompatActivity {
     }
 
 
-    //just initializing the image buttons so they can be used
-    public void initializeVars(){
-        ImageButton btnHumber = (ImageButton) findViewById(R.id.humberCollege);
-        ImageButton btnRyerson = (ImageButton) findViewById(R.id.ryersonUniversity);
-    }
-
-    public void humberSelection(View view){
-        Intent intent = new Intent(this, HumberSelection.class);
+    public void startTeamCreationH(View view){
+        Intent intent = new Intent(this, RealNewTeam.class);
+        intent.putExtra("event","Humber College");
         startActivity(intent);
     }
 
-    public void ryersonSelection(View view){
-        Intent intent = new Intent(this, RyersonSelection.class);
+    public void startTeamCreationR(View view){
+        Intent intent = new Intent(this, RealNewTeam.class);
+        intent.putExtra("event","Ryerson University");
         startActivity(intent);
     }
 }

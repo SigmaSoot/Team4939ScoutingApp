@@ -29,11 +29,13 @@ public class RealSandstorm extends AppCompatActivity {
 
         String[] newTeamInfo = getIntent().getStringArrayExtra("newTeamInfo");
         boolean[] beginningList = getIntent().getBooleanArrayExtra("beginningList");
+        String event = getIntent().getStringExtra("event");
 
         Intent intent = new Intent(this, RealTeleOp.class);
         intent.putExtra("sandstormList", sandstormList);
         intent.putExtra("beginningList", beginningList);
         intent.putExtra("newTeamInfo", newTeamInfo);
+        intent.putExtra("event",event);
         startActivity(intent);
 
 

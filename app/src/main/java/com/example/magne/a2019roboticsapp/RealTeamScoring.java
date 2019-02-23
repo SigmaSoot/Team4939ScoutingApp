@@ -85,29 +85,29 @@ public class RealTeamScoring extends AppCompatActivity {
             List<Boolean> EL = new ArrayList<>();
             EL = boolConverter(endgameList,EL);
             HashMap<String, Boolean[]> teleopList = (HashMap<String, Boolean[]>)getIntent().getSerializableExtra("teleopList");
-
+            String event = getIntent().getStringExtra("event");
             ArrayList<Integer> teleopTimes = getIntent().getIntegerArrayListExtra("teleopTimes");
 
             String[] newTeamInfo = getIntent().getStringArrayExtra("newTeamInfo");
             String time = getIntent().getStringExtra("endgameTime");
 
-            mDatabase.child("Teams").child(newTeamInfo[1]).setValue(newTeamInfo[0]);
-            mDatabase.child("Teams").child(newTeamInfo[1]).child("Scouter Name").setValue(newTeamInfo[2]);
-            mDatabase.child("Teams").child(newTeamInfo[1]).child("Beginning Info").setValue(BL);
-            mDatabase.child("Teams").child(newTeamInfo[1]).child("Sandstorm Info").setValue(SL);
+            mDatabase.child(event).child("Teams").child(newTeamInfo[1]).setValue(newTeamInfo[0]);
+            mDatabase.child(event).child("Teams").child(newTeamInfo[1]).child("Scouter Name").setValue(newTeamInfo[2]);
+            mDatabase.child(event).child("Teams").child(newTeamInfo[1]).child("Beginning Info").setValue(BL);
+            mDatabase.child(event).child("Teams").child(newTeamInfo[1]).child("Sandstorm Info").setValue(SL);
             int u = 0;
             for (HashMap.Entry<String,Boolean[]> whichCycle : teleopList.entrySet()){
                 List<Boolean> prop =  Arrays.asList(whichCycle.getValue());
-                mDatabase.child("Teams").child(newTeamInfo[1]).child("Tele-Op Info").child(whichCycle.getKey()).setValue(prop);
-                mDatabase.child("Teams").child(newTeamInfo[1]).child("Tele-Op Info").child(whichCycle.getKey()).setValue(teleopTimes.get(u));
+                mDatabase.child(event).child("Teams").child(newTeamInfo[1]).child("Tele-Op Info").child(whichCycle.getKey()).setValue(prop);
+                mDatabase.child(event).child("Teams").child(newTeamInfo[1]).child("Tele-Op Info").child(whichCycle.getKey()).child("Time").setValue(teleopTimes.get(u));
                 u++;
             }
-            mDatabase.child("Teams").child(newTeamInfo[1]).child("Endgame Info").setValue(EL);
-            mDatabase.child("Teams").child(newTeamInfo[1]).child("Endgame Info").setValue(time);
-
+            mDatabase.child(event).child("Teams").child(newTeamInfo[1]).child("Endgame Info").setValue(EL);
+            mDatabase.child(event).child("Teams").child(newTeamInfo[1]).child("Endgame Info").child("Recovery Time").setValue(time);
 
 
             Intent intent = new Intent(this, RealSubmit.class);
+            intent.putExtra("event",event);
             startActivity(intent);
         }
 

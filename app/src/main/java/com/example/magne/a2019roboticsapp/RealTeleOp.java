@@ -81,6 +81,7 @@ public class RealTeleOp extends AppCompatActivity {
         boolean[] beginningList = getIntent().getBooleanArrayExtra("beginningList");
         String[] newTeamInfo = getIntent().getStringArrayExtra("newTeamInfo");
         boolean[] sandstormList = getIntent().getBooleanArrayExtra("sandstormList");
+        String event = getIntent().getStringExtra("event");
 
         Intent intent = new Intent(this, RealTeamEndgame.class);
         intent.putExtra("newTeamInfo", newTeamInfo);
@@ -88,6 +89,7 @@ public class RealTeleOp extends AppCompatActivity {
         intent.putExtra("sandstormList", sandstormList);
         intent.putExtra("teleopList",cycleList);
         intent.putIntegerArrayListExtra("teleopTimes", cycleTimes);
+        intent.putExtra("event",event);
         startActivity(intent);
     }
 
@@ -108,12 +110,8 @@ public class RealTeleOp extends AppCompatActivity {
         int time = (int) (SystemClock.elapsedRealtime() - chronometer.getBase());
         cycleTimes.add(time);
         chronometer.setBase(SystemClock.elapsedRealtime());
-        cycleNum++;
-        String titleChange = String.format("Cycle %d", cycleNum);
-        ((TextView) findViewById(R.id.cycleTitle)).setText(titleChange);
-        //ADD STORAGE OF THE PREVIOUS CYCLE'S INFO FUNCTIONALITY
-        //RESET SCREEN FUNCTIONALITY
-        teleopList = new CheckBox[]{
+
+            teleopList = new CheckBox[]{
             teleopList[3] = (CheckBox) findViewById(R.id.cargoCargoTeleCB),
             teleopList[1] = (CheckBox) findViewById(R.id.yesCargoTeleCB),
             teleopList[2] = (CheckBox) findViewById(R.id.noCargoTeleCB),
@@ -140,7 +138,11 @@ public class RealTeleOp extends AppCompatActivity {
                 teleopList[9].isChecked(),teleopList[10].isChecked(),teleopList[11].isChecked(),
                 teleopList[12].isChecked(),teleopList[13].isChecked(),teleopList[14].isChecked(),
                 teleopList[15].isChecked()
+
         });
+        cycleNum++;
+        String titleChange = String.format("Cycle %d", cycleNum);
+        ((TextView) findViewById(R.id.cycleTitle)).setText(titleChange);
 
        for (CheckBox CB: teleopList) CB.setChecked(false);
 

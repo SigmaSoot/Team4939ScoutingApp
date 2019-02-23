@@ -25,8 +25,10 @@ public class RealSubmit extends AppCompatActivity {
     }
 
     public void startNewTeam (View view){
+        String event = getIntent().getStringExtra("event");
         Intent intent = new Intent(this, RealNewTeam.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.putExtra("event",event);
         startActivity(intent);
     }
 

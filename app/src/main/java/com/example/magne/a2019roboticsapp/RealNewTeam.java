@@ -30,8 +30,10 @@ public class RealNewTeam extends AppCompatActivity {
         EditText scouterName = findViewById(R.id.scouterName);
         info[2] = scouterName.getText().toString();
 
+        String event = getIntent().getStringExtra("event");
         Intent intent = new Intent(this, RealBegginingLoc.class);
         intent.putExtra("newTeamInfo", info);
+        intent.putExtra("event",event);
         startActivity(intent);
     }
 

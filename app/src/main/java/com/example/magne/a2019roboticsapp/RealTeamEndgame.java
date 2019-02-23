@@ -51,6 +51,7 @@ public class RealTeamEndgame extends AppCompatActivity {
         boolean[] sandstormList = getIntent().getBooleanArrayExtra("sandstormList");
         ArrayList<Integer> teleopTimes = getIntent().getIntegerArrayListExtra("teleopTimes");
         HashMap<String, Boolean[]> teleopList = (HashMap<String, Boolean[]>)getIntent().getSerializableExtra("teleopList");
+        String event = getIntent().getStringExtra("event");
 
         Intent intent = new Intent(this, RealTeamScoring.class);
         intent.putExtra("newTeamInfo",newTeamInfo);
@@ -59,6 +60,7 @@ public class RealTeamEndgame extends AppCompatActivity {
         intent.putExtra("teleopList",teleopList);
         intent.putExtra("endgameList", endgameList);
         intent.putExtra("endgameTime", time);
+        intent.putExtra("event",event);
         intent.putIntegerArrayListExtra("teleopTimes", teleopTimes);
         startActivity(intent);
     }

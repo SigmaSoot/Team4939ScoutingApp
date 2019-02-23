@@ -13,17 +13,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="97dp"
         android:text="Does the robot stop at all during the game?"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
         android:text="Errors"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,8 +33,8 @@
         android:id="@+id/endgameStopYesCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="19dp"
         android:text="Yes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -43,17 +43,17 @@
         android:id="@+id/endgameStopNoCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="19dp"
         android:text="No"
-        app:layout_constraintEnd_toEndOf="@+id/textView11"
-        app:layout_constraintStart_toStartOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="@+id/endgameTipNoCB"
+        app:layout_constraintStart_toStartOf="@+id/endgameTipNoCB"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
         android:id="@+id/endgameTime"
         android:layout_width="65dp"
         android:layout_height="49dp"
-        android:layout_marginStart="13dp"
+        android:layout_marginStart="9dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
@@ -63,8 +63,8 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="41dp"
         android:text="Time (s)"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/endgameStopYesCB" />
@@ -72,28 +72,30 @@
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="43dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="53dp"
         android:text="Does the robot tip on its own during the game?"
+        app:layout_constraintBottom_toBottomOf="@+id/endgameTipYesCB"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/endgameTime" />
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <CheckBox
         android:id="@+id/endgameTipYesCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
         android:text="Yes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/endgameTipNoCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="21dp"
         android:text="No"
         app:layout_constraintEnd_toEndOf="@+id/endgameRecoverNoCB"
         app:layout_constraintStart_toStartOf="@+id/endgameRecoverNoCB"
@@ -103,18 +105,18 @@
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="252dp"
         android:text="Did the recover from the fall?"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/endgameTipYesCB" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/endgameRecoverYesCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="20dp"
         android:text="Yes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -123,9 +125,9 @@
         android:id="@+id/endgameRecoverNoCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="163dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="164dp"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="161dp"
         android:text="No"
         app:layout_constraintEnd_toEndOf="@+id/button9"
         app:layout_constraintStart_toStartOf="@+id/textView15"
@@ -136,7 +138,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="29dp"
-        android:layout_marginBottom="26dp"
+        android:layout_marginBottom="25dp"
         android:onClick="startScoringActivity"
         android:text="NEXT"
         app:layout_constraintBottom_toBottomOf="parent"
